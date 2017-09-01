@@ -10,11 +10,20 @@ namespace ComicBookGallery.Controllers
     {
 
         // action method - all public methods in a controller are action methods.
-        public string  Detail()
+        public ActionResult Detail()
         {
-            return
 
-                "Hi from comics book controller. !!! "; 
+            if(DateTime.Today.DayOfWeek == DayOfWeek.Thursday)
+            {
+                return Redirect("/");
+            }
+
+
+
+            return Content("Hi from comics book controller. !!!");
         }
+
+              
+        
     }
 }
